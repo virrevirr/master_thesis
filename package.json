@@ -13,8 +13,8 @@
   "main": "./extension.js",
   "contributes": {
     "commands": [{
-      "command": "incontrol.helloWorld",
-      "title": "Hello World"
+      "command": "incontrol.inControl",
+      "title": "In Control"
     }]
   },
   "scripts": {
