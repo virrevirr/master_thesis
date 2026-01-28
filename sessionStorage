@@ -1,0 +1,16 @@
+{
+  "sessions": [
+    {
+      "sessionId": "b52fb473-071b-4289-9069-7fb784020727",
+      "startTimestamp": 1769624585929,
+      "endTimestamp": 1769624611776,
+      "isActive": false
+    },
+    {
+      "sessionId": "4a5fa671-1f72-426b-9ffa-46986cbd3a33",
+      "startTimestamp": 1769625121386,
+      "endTimestamp": 1769625143175,
+      "isActive": false
+    }
+  ]
+}
