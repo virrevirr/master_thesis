@@ -3,14 +3,18 @@
  */
 class Session {
     /**
-     * @param {string} sessionId - Unique identifier for the session
+     * @param {string} sessionId 
+     * @param {string} taskDescription 
      */
-    constructor(sessionId) {
+    
+    constructor(sessionId, taskDescription) {
         this.sessionId = sessionId;
+        this.taskDescription = taskDescription;
         this.startTimestamp = Date.now();
         this.endTimestamp = null;
         this.isActive = true;
         console.log(`[Session] Session created: ${sessionId} at ${new Date(this.startTimestamp).toISOString()}`);
+        console.log(`[Session] Task: ${taskDescription}`);
     }
 
     /**
@@ -44,6 +48,7 @@ class Session {
     toJSON() {
         return {
             sessionId: this.sessionId,
+            taskDescription: this.taskDescription,
             startTimestamp: this.startTimestamp,
             endTimestamp: this.endTimestamp,
             isActive: this.isActive

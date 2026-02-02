@@ -43,13 +43,26 @@ function activate(context) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('incontrol.inControl', function () {
+	const disposable = vscode.commands.registerCommand('incontrol.inControl', async function () {
 		// The code you place here will be executed every time your command is executed
 
-		// Example: Start a session
+		// Start a session
 		if (!currentSession || !currentSession.isActive) {
+			// Prompt for task description
+			const taskDescription = await vscode.window.showInputBox({
+				prompt: 'What task will you work on during this session?',
+				placeHolder: 'Enter task description',
+				ignoreFocusOut: true
+			});
+
+			// Session cannot start without task description
+			if (!taskDescription) {
+				vscode.window.showWarningMessage('Session not started: task description is required.');
+				return;
+			}
+
 			const sessionId = randomUUID();
-			currentSession = new Session(sessionId);
+			currentSession = new Session(sessionId, taskDescription);
 
 			// Save session to storage
 			const storageData = readSessions();
