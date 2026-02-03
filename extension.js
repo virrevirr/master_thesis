@@ -1,5 +1,5 @@
 const vscode = require('vscode');
-const Session = require('./session');
+const Session = require('./Session');
 const { randomUUID } = require("crypto");
 const fs = require('fs');
 const path = require('path');
