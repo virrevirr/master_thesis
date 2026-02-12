@@ -1,3 +1,5 @@
+const TerminalObserver = require('../events/terminalObserver');
+
 /**
  * Represents a recording session
  */
@@ -19,6 +21,12 @@ class Session {
         console.log(`[Session] Session created: ${sessionId} at ${new Date(this.startTimestamp).toISOString()}`);
         console.log(`[Session] User: ${userName}`);
         console.log(`[Session] Task: ${taskDescription}`);
+
+        // Start terminal observer
+        this.terminalObserver = new TerminalObserver(sessionId, userName, (event) => {
+            console.log('[Session] Event recorded:', event);
+        });
+        this.terminalObserver.start();
     }
 
     /**
@@ -35,6 +43,11 @@ class Session {
             console.log(`[Session] Duration: ${(duration / 60000).toFixed(2)}min`);
             if (reflection) {
                 console.log(`[Session] Reflection: ${reflection}`);
+            }
+
+            // Stop terminal observer
+            if (this.terminalObserver) {
+                this.terminalObserver.stop();
             }
         }
     }

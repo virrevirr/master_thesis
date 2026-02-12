@@ -11,6 +11,9 @@
   ],
   "activationEvents": [],
   "main": "./src/extension.js",
+  "enabledApiProposals": [
+    "terminalDataWriteEvent"
+  ],
   "contributes": {
     "commands": [{
       "command": "incontrol.inControl",

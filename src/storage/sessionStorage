@@ -1,5 +1,22 @@
 {
   "sessions": [
-    
+    {
+      "sessionId": "d5aa7356-842e-4ffe-8fbc-c7e95b6c01f6",
+      "userName": "Vira",
+      "taskDescription": "try something",
+      "startTimestamp": 1770211921329,
+      "endTimestamp": 1770211926918,
+      "reflection": "good",
+      "isActive": false
+    },
+    {
+      "sessionId": "18c5ad81-fffd-4b01-bc31-54b487f98fe5",
+      "userName": "Vira",
+      "taskDescription": "debug tty output storage",
+      "startTimestamp": 1770212294809,
+      "endTimestamp": 1770212395567,
+      "reflection": "pretty good",
+      "isActive": false
+    }
   ]
 }
